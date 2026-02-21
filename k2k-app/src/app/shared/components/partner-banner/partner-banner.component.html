@@ -1,0 +1,13 @@
+<section class="py-4 bg-white">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-5">
+      @for (partner of partners; track partner.name) {
+        <img
+          [src]="partner.logo"
+          [alt]="partner.name"
+          [class]="large ? 'partner-logo-lg' : 'partner-logo'"
+        >
+      }
+    </div>
+  </div>
+</section>

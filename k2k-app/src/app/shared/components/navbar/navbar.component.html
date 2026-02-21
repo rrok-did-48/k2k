@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-k2k-dark sticky-top shadow-sm py-2">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/" (click)="closeNav()">
+      <img src="logo-k2k.svg" alt="K2K SRL" height="45" class="me-2">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler border-0" type="button" (click)="toggleNav()" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="collapse navbar-collapse" [class.show]="!isCollapsed" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeNav()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/chi-siamo" routerLinkActive="active" (click)="closeNav()">Chi Siamo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/servizi" routerLinkActive="active" (click)="closeNav()">Servizi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/assicurazioni" routerLinkActive="active" (click)="closeNav()">Assicurazioni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cristalli" routerLinkActive="active" (click)="closeNav()">Cristalli</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/aziende" routerLinkActive="active" (click)="closeNav()">Aziende</a>
+        </li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-k2k btn-sm px-3 py-2" routerLink="/contatti" (click)="closeNav()">
+            <i class="bi bi-calendar-check me-1"></i> Appuntamento
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

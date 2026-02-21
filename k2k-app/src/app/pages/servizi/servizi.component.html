@@ -1,0 +1,54 @@
+<!-- ======= PAGE HEADER ======= -->
+<section class="bg-k2k-dark text-white py-5">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold mb-2">I Nostri <span class="text-k2k-red">Servizi</span></h1>
+    <p class="lead text-white-50">Disponibili in entrambe le sedi di Gambettola e Borello.</p>
+  </div>
+</section>
+
+<!-- ======= SERVIZI GRID ======= -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-4">
+      @for (servizio of servizi; track servizio.title) {
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-hover border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <div class="icon-circle d-inline-flex align-items-center justify-content-center mb-3">
+                <i class="{{ servizio.icon }} fs-5"></i>
+              </div>
+              <h5 class="fw-bold">{{ servizio.title }}</h5>
+              <p class="text-muted small">{{ servizio.description }}</p>
+              <span class="badge bg-light text-dark border small">
+                <i class="bi bi-geo-alt me-1"></i>{{ servizio.sedi }}
+              </span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ======= PLUS OMAGGIO ======= -->
+<section class="section-padding bg-k2k-red text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="fw-bold display-6 mb-3"><i class="bi bi-gift me-2"></i> Plus Omaggio</h2>
+        <p class="lead mb-0">
+          Con ogni riparazione, ricevi <strong>lavaggio esterno</strong> e <strong>igienizzazione interni</strong> completamente gratuiti.
+          La tua auto torna come nuova, dentro e fuori.
+        </p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+        <a routerLink="/contatti" class="btn btn-light btn-lg fw-semibold text-k2k-red">
+          <i class="bi bi-calendar-check me-2"></i> Prenota Ora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PARTNERS ======= -->
+<app-partner-banner />

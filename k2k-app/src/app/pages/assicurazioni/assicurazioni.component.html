@@ -1,0 +1,107 @@
+<!-- ======= PAGE HEADER ======= -->
+<section class="bg-k2k-dark text-white py-5">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold mb-2">Gestione <span class="text-k2k-red">Sinistri</span></h1>
+    <p class="lead text-white-50">Riparazione senza pensieri e zero anticipi.</p>
+  </div>
+</section>
+
+<!-- ======= INTRO ======= -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <p class="lead text-muted text-center">
+          In <strong>K2K SRL</strong>, sappiamo che un incidente è già un forte stress.
+          Per questo motivo, in entrambe le nostre sedi di <strong>Gambettola</strong> e <strong>Borello</strong>,
+          mettiamo a tua disposizione un servizio di <strong>gestione completa del sinistro</strong>.
+          Grazie alle nostre partnership con i principali gruppi assicurativi, pensiamo a tutto noi.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PARTNER UFFICIALI ======= -->
+<section class="section-padding bg-k2k-gray">
+  <div class="container">
+    <div class="text-center section-header">
+      <h2 class="fw-bold display-6">I Nostri <span class="text-k2k-red">Partner Ufficiali</span></h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <!-- Allianz -->
+      <div class="col-md-4">
+        <div class="card card-hover border-0 shadow-sm h-100 text-center p-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <img src="partners/allianz.svg" alt="Allianz" class="partner-logo-lg mb-3">
+            <h5 class="fw-bold">Allianz</h5>
+            <p class="text-muted small">Carrozzeria Fiduciaria</p>
+          </div>
+        </div>
+      </div>
+      <!-- Generali -->
+      <div class="col-md-4">
+        <div class="card card-hover border-0 shadow-sm h-100 text-center p-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <img src="partners/generali.svg" alt="Generali" class="partner-logo-lg mb-3">
+            <h5 class="fw-bold">Generali</h5>
+            <p class="text-muted small">Carrozzeria Convenzionata</p>
+          </div>
+        </div>
+      </div>
+      <!-- Prima -->
+      <div class="col-md-4">
+        <div class="card card-hover border-0 shadow-sm h-100 text-center p-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <img src="partners/prima.jpg" alt="Prima Assicurazioni" class="partner-logo-lg mb-3">
+            <h5 class="fw-bold">Prima Assicurazioni</h5>
+            <p class="text-muted small">Centro Autorizzato</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= VANTAGGI ======= -->
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center section-header">
+      <h2 class="fw-bold display-6">Perché scegliere una carrozzeria <span class="text-k2k-red">convenzionata</span> K2K SRL?</h2>
+    </div>
+    <div class="row g-4">
+      @for (v of vantaggi; track v.title) {
+        <div class="col-md-6">
+          <div class="d-flex align-items-start p-3">
+            <div class="icon-circle-sm d-flex align-items-center justify-content-center flex-shrink-0 me-3">
+              <i class="{{ v.icon }}"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">{{ v.title }}</h5>
+              <p class="text-muted small mb-0">{{ v.description }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ======= CTA ======= -->
+<section class="section-padding bg-k2k-red text-white text-center">
+  <div class="container">
+    <h2 class="fw-bold display-6 mb-3">Hai avuto un incidente o un danno ai vetri?</h2>
+    <p class="lead mb-4">
+      Non aspettare. Contattaci subito o passa in una delle nostre sedi con il modulo CAI
+      (ex Constatazione Amichevole): il nostro team giovane e dinamico prenderà in carico la tua pratica immediatamente.
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="https://wa.me/393277380403?text=Ciao%2C%20ho%20avuto%20un%20sinistro" target="_blank" class="btn btn-whatsapp btn-lg">
+        <i class="bi bi-whatsapp me-2"></i> Scrivici su WhatsApp
+      </a>
+      <a routerLink="/contatti" class="btn btn-light btn-lg fw-semibold text-k2k-red">
+        <i class="bi bi-calendar-check me-2"></i> Prenota Appuntamento
+      </a>
+    </div>
+  </div>
+</section>

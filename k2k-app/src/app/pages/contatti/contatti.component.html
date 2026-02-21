@@ -1,0 +1,159 @@
+<!-- ======= PAGE HEADER ======= -->
+<section class="bg-k2k-dark text-white py-5">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold mb-2">Contatti &amp; <span class="text-k2k-red">Appuntamento</span></h1>
+    <p class="lead text-white-50">Compila il modulo o contattaci direttamente. Lavaggio e igienizzazione omaggio inclusi.</p>
+  </div>
+</section>
+
+<!-- ======= CONTENT ======= -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row g-5">
+      <!-- FORM -->
+      <div class="col-lg-7">
+        @if (!submitted) {
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="fw-bold mb-4"><i class="bi bi-calendar-check text-k2k-red me-2"></i>Richiedi Appuntamento</h3>
+              <form #appointmentForm="ngForm" (ngSubmit)="appointmentForm.valid && onSubmit()">
+                <!-- Tipo Cliente -->
+                <div class="mb-3">
+                  <label for="tipoCliente" class="form-label fw-semibold">Tipo Cliente *</label>
+                  <select id="tipoCliente" class="form-select" name="tipoCliente" [(ngModel)]="form.tipoCliente" required>
+                    <option value="" disabled>Seleziona...</option>
+                    <option value="Privato">Privato</option>
+                    <option value="Azienda/Flotta">Azienda / Flotta</option>
+                    <option value="Sinistro Assicurativo">Sinistro Assicurativo</option>
+                  </select>
+                </div>
+
+                <!-- Nome -->
+                <div class="mb-3">
+                  <label for="nome" class="form-label fw-semibold">Nome / Ragione Sociale *</label>
+                  <input type="text" id="nome" class="form-control" name="nome" [(ngModel)]="form.nome" required placeholder="Es. Mario Rossi">
+                </div>
+
+                <!-- Cellulare -->
+                <div class="mb-3">
+                  <label for="cellulare" class="form-label fw-semibold">Cellulare (WhatsApp) *</label>
+                  <input type="tel" id="cellulare" class="form-control" name="cellulare" [(ngModel)]="form.cellulare" required placeholder="Es. 333 1234567">
+                </div>
+
+                <!-- Sede -->
+                <div class="mb-3">
+                  <label for="sede" class="form-label fw-semibold">Sede Preferita *</label>
+                  <select id="sede" class="form-select" name="sede" [(ngModel)]="form.sede" required>
+                    <option value="" disabled>Seleziona...</option>
+                    <option value="Gambettola">Gambettola – Via Zoffoli, 17</option>
+                    <option value="Borello (Centro Glassdrive)">Borello – Via Siracusa, 127 (Centro Glassdrive)</option>
+                  </select>
+                </div>
+
+                <!-- Motivo -->
+                <div class="mb-3">
+                  <label for="motivo" class="form-label fw-semibold">Motivo *</label>
+                  <select id="motivo" class="form-select" name="motivo" [(ngModel)]="form.motivo" required>
+                    <option value="" disabled>Seleziona...</option>
+                    <option value="Carrozzeria">Carrozzeria</option>
+                    <option value="Cristalli">Cristalli</option>
+                    <option value="Grandine">Grandine</option>
+                    <option value="Perizia Assicurativa">Perizia Assicurativa</option>
+                  </select>
+                </div>
+
+                <!-- Data -->
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="data" class="form-label fw-semibold">Data Preferita</label>
+                    <input type="date" id="data" class="form-control" name="data" [(ngModel)]="form.data">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="fasciaOraria" class="form-label fw-semibold">Fascia Oraria</label>
+                    <select id="fasciaOraria" class="form-select" name="fasciaOraria" [(ngModel)]="form.fasciaOraria">
+                      <option value="">Seleziona...</option>
+                      <option value="Mattina">Mattina</option>
+                      <option value="Pomeriggio">Pomeriggio</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Note -->
+                <div class="mb-4">
+                  <label for="note" class="form-label fw-semibold">Note aggiuntive</label>
+                  <textarea id="note" class="form-control" name="note" [(ngModel)]="form.note" rows="3" placeholder="Descrivi brevemente il problema..."></textarea>
+                </div>
+
+                <!-- Info -->
+                <div class="alert alert-light border d-flex align-items-center mb-4" role="alert">
+                  <i class="bi bi-gift text-k2k-red fs-5 me-3"></i>
+                  <small><strong>Omaggio incluso:</strong> Lavaggio esterno e igienizzazione interni con ogni riparazione.</small>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn-k2k btn-lg w-100" [disabled]="!appointmentForm.valid">
+                  <i class="bi bi-whatsapp me-2"></i> Invia Richiesta via WhatsApp
+                </button>
+              </form>
+            </div>
+          </div>
+        } @else {
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-5 text-center">
+              <i class="bi bi-check-circle-fill text-success display-1 mb-3"></i>
+              <h3 class="fw-bold mb-3">Richiesta Inviata!</h3>
+              <p class="text-muted">La tua richiesta è stata inviata su WhatsApp. Il nostro team ti contatterà al più presto.</p>
+              <button class="btn btn-k2k-outline mt-3" (click)="resetForm()">
+                <i class="bi bi-arrow-repeat me-2"></i> Nuova Richiesta
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- SIDEBAR CONTATTI -->
+      <div class="col-lg-5">
+        <!-- Sede Gambettola -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-geo-alt-fill text-k2k-red me-2"></i>Sede Gambettola</h5>
+            <p class="text-muted mb-2"><i class="bi bi-pin-map me-2"></i>Via Antonio Zoffoli, 17 – Gambettola (FC)</p>
+            <p class="text-muted mb-2"><i class="bi bi-telephone me-2"></i><a href="tel:054759528" class="text-decoration-none text-muted">0547 59528</a></p>
+            <p class="text-muted mb-3"><i class="bi bi-wrench me-2"></i>Carrozzeria &amp; Gestione Sinistri</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2862.5!2d12.3369!3d44.1228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVia+Antonio+Zoffoli+17+Gambettola!5e0!3m2!1sit!2sit!4v1"
+              width="100%" height="200" style="border:0; border-radius:12px" allowfullscreen loading="lazy"
+              title="Mappa Gambettola"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Sede Borello -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-geo-alt-fill text-k2k-red me-2"></i>Sede Borello</h5>
+            <p class="text-muted mb-2"><i class="bi bi-pin-map me-2"></i>Via Siracusa, 127 – Borello (FC)</p>
+            <p class="text-muted mb-2"><i class="bi bi-telephone me-2"></i><a href="tel:3277380403" class="text-decoration-none text-muted">327 738 0403</a></p>
+            <p class="text-muted mb-3"><i class="bi bi-wrench me-2"></i>Carrozzeria, Sinistri &amp; Centro Glassdrive</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2862.5!2d12.1800!3d44.0600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVia+Siracusa+127+Borello!5e0!3m2!1sit!2sit!4v1"
+              width="100%" height="200" style="border:0; border-radius:12px" allowfullscreen loading="lazy"
+              title="Mappa Borello"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- WhatsApp diretto -->
+        <div class="card border-0 bg-k2k-gray">
+          <div class="card-body p-4 text-center">
+            <h5 class="fw-bold mb-3">Preferisci WhatsApp?</h5>
+            <p class="text-muted small mb-3">Inviaci le foto del danno per un preventivo rapido e gratuito.</p>
+            <a href="https://wa.me/393277380403?text=Ciao%2C%20vorrei%20un%20preventivo" target="_blank" class="btn btn-whatsapp w-100">
+              <i class="bi bi-whatsapp me-2"></i> Scrivici su WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

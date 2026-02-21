@@ -1,0 +1,21 @@
+.hero-section {
+  min-height: 85vh;
+  background:
+    url('/logo-k2k-icon.svg') center center / cover no-repeat;
+  background-color: var(--k2k-dark);
+}
+
+.hero-logo {
+  max-height: 350px;
+  filter: drop-shadow(0 10px 40px rgba(200, 16, 46, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
