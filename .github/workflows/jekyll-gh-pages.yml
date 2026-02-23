@@ -40,8 +40,8 @@ jobs:
       - name: Caricamento dei file pronti
         uses: actions/upload-pages-artifact@v3
         with:
-          # IL PERCORSO CORRETTO IN BASE AL TUO LOG DI ERRORE:
-          path: './k2k-app/dist/k2k-app'
+          # IL PERCORSO DEFINITIVO: scende fino alla cartella 'browser' che contiene l'index.html
+          path: './k2k-app/dist/k2k-app/browser'
 
   deploy:
     environment:

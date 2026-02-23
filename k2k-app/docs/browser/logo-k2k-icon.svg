@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
-  <circle cx="150" cy="150" r="140" fill="none" stroke="#1a1a1a" stroke-width="6"/>
-  <circle cx="150" cy="150" r="130" fill="none" stroke="#c8102e" stroke-width="3"/>
-  <text x="150" y="175" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="80" font-weight="900">
-    <tspan fill="#1a1a1a">K</tspan><tspan fill="#c8102e">2</tspan><tspan fill="#1a1a1a">K</tspan>
-  </text>
-  <text x="150" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#666" letter-spacing="8">CARROZZERIA</text>
-</svg>
