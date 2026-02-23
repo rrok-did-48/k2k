@@ -3,13 +3,15 @@ name: Build and Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main # Il workflow parte quando fai un push sul branch 'main'
 
+# Permessi necessari a GitHub per pubblicare il sito direttamente
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Evita che partano più pubblicazioni in contemporanea se fai tanti salvataggi veloci
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -32,12 +34,14 @@ jobs:
 
       - name: Build del progetto Angular
         working-directory: ./k2k-app
+        # Genera i file pronti per GitHub Pages
         run: npm run build -- --base-href /k2k/
 
       - name: Caricamento dei file pronti
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './k2k-app/dist/browser'
+          # IL PERCORSO CORRETTO IN BASE AL TUO LOG DI ERRORE:
+          path: './k2k-app/dist/k2k-app'
 
   deploy:
     environment:
