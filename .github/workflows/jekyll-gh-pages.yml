@@ -35,7 +35,7 @@ jobs:
       - name: Build del progetto Angular
         working-directory: ./k2k-app
         # Genera i file pronti per GitHub Pages
-        run: npm run build -- --base-href /k2k/
+        run: npm run build -- --base-href /
 
       - name: Caricamento dei file pronti
         uses: actions/upload-pages-artifact@v3
