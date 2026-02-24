@@ -37,6 +37,10 @@ jobs:
         # Genera i file pronti per GitHub Pages
         run: npm run build -- --base-href /
 
+      # ---> ECCO IL PASSAGGIO AGGIUNTO PER RISOLVERE IL ROUTING <---
+      - name: Crea file 404 per il routing di Angular
+        run: cp ./k2k-app/dist/k2k-app/browser/index.html ./k2k-app/dist/k2k-app/browser/404.html
+
       - name: Caricamento dei file pronti
         uses: actions/upload-pages-artifact@v3
         with:
